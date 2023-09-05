@@ -1,0 +1,21 @@
+<h1>Welcome to the Orders page!</h1>
+<app-add-order-form (OrderCreated)="NewOrder($event)"></app-add-order-form>
+
+<table>
+  <tr column="">
+    <th> Restaurant </th>
+    <th> Description </th>
+    <th> Rating </th>
+    <th> Get Again? </th>
+    <th></th>
+  </tr>
+  
+  <tr *ngFor="let o of OrderListResult">
+    <td>{{ o.restaurant }}</td>
+    <td>{{ o.description }}</td>
+    <td>{{ o.rating }}</td>
+    <td *ngIf="o.orderAgain">Yes!</td>
+    <td *ngIf="o.orderAgain == false">No!</td>
+    <td><button (click)="RemoveOrder(o.id)">Remove</button></td>
+  </tr>
+</table>

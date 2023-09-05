@@ -1,0 +1,13 @@
+<h1>Add an Order!</h1>
+<p>Restaurant:</p>
+<input type="text" [(ngModel)]="o.restaurant"/>
+<p>Description:</p>
+<input type="text" [(ngModel)]="o.description"/>
+<p>Rating 1-5:</p>
+<input type="number" [(ngModel)]="o.rating"/>
+<p>Would you order this again? Y/N <input type="checkbox" value="true" [(ngModel)]="o.orderAgain"/></p>
+
+
+<br>
+<button (click)="CreateOrder()">Submit Order</button>
+<br><br><br>
